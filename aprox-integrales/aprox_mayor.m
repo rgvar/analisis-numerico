@@ -15,5 +15,6 @@ function retval = integral_mayor (N, tf)
     figure (1)
     plot (t, y, 'ob')
     grid on
-    retval = IM;
+    format long
+    disp((IM);
 endfunction
