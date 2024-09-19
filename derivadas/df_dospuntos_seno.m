@@ -16,7 +16,4 @@ function df_dospuntos_seno(x = pi/10, h = 0.1)
     disp(" ");
     endfor
 
-
-
-
 endfunction
