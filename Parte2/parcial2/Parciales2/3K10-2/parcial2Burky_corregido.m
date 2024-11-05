@@ -1,4 +1,6 @@
 function parcial2Burky_corregido
+
+  clc,clear
   # función g con datos brindados
   gn = load("registro-13-nov.txt", "-ascii");
 
