@@ -1,11 +1,12 @@
-function parcial2Burky_corregidoAdaptado
+function parcial2_bur
+    clc,clear
   # función g con datos brindados
-  gn = load("parcial_2_3k10_2023.txt", "-ascii");
+  gn = load("parcial_2_3k10_T1.txt", "-ascii");
 
   # datos iniciales
-  Dt=0.16755;
+  Dt=0.13464;
   t0=0;
-  A1=1/4;
+  A1=1/6;
 
   N=length(gn); # para saber cantidad de datos, son 1024
 
@@ -157,7 +158,7 @@ endfor
 
    ### COMPARAR (ejercicio 5) ###
   figure(5)
-  plot(tn,gn,'b',tn,Pa,'r') % tn,yc(1:N),'g')
+  plot(tn,gn,'r',tn,Pa,'b',tn,yc(1:N),'g')
   title('Comparación final')
   grid on
    title('figura 5')
