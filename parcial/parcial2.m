@@ -2,10 +2,10 @@
 
 function parcial2
     clc,clear
-    Dt = 0.16755;
-    A1 = 1/4;
+    Dt = 0.13464;
+    A1 = 1/6;
 
-    g = load("parcial_2_3k10_2023.txt");
+    g = load("parcial_2_3k10_T1.txt");
     N = length(g);
 
     % f discreta
@@ -21,7 +21,7 @@ function parcial2
 
     tg_max = 0;
     g_max = 0;
-    for j=1:N/3
+    for j=1:N/2
         if g(j) > g_max
             tg_max = t(j);
             g_max = g(j);
@@ -47,7 +47,7 @@ function parcial2
     G_tdf_kc=0;
     kc=0;
     for k=1:10
-        if G_tdf_mod(k) > (0.05 * G_tdf_MAX)
+        if G_tdf_mod(k) > (0.1 * G_tdf_MAX)
             G_tdf_kc = G_tdf_mod(k);
             kc = k;
         endif
@@ -55,7 +55,7 @@ function parcial2
     G_tdf_kc,kc
 
     % min2
-    m=kc;
+    m=3;
     Tp = Dt*N;
     Dw = (2*pi)/Tp;
     w0 = (2*pi)/N;
@@ -82,7 +82,7 @@ function parcial2
 
     tPa_max=0;
     Pa_max=0;
-    for i=1:(N/3)
+    for i=1:(N/2)
         if(Pa(i)>Pa_max)
             Pa_max = Pa(i);
             tPa_max = t(i);
@@ -97,6 +97,7 @@ function parcial2
 
     % convolucion
 
+    kc = 7;
     Tp = Dt*N;
     Dw = (2*pi)/Tp;
     p=kc*Dw;
@@ -113,7 +114,7 @@ function parcial2
 
     tyc_max=0;
     yc_max=0;
-    for j=1:N/3
+    for j=1:N/2
         if yc(j) > yc_max
             tyc_max = t(j);
             yc_max = yc(j);
