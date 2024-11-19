@@ -101,8 +101,8 @@ function parcial2
     Dw = (2*pi)/Tp;
     p=kc*Dw;
 
-    for i=1:N
-        hn(i)=A1*exp((-p)*t(i));
+    for j=1:N
+        hn(i)=A1*exp((-p)*t(j));
     endfor
     yc=Dt*conv(hn,g);
 
