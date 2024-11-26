@@ -123,6 +123,34 @@ function practica_noche
 
 
 
+    ############ PUNTO 3
+
+    g = [1 2 3 4 5 0 0 0 0 0 0 0]';
+    G_tdf = abs(fft(g));
+    N = 12;
+    fs = 50;
+    Dt = 1/fs
+    Dw = (2*pi) / (N*Dt)
+    m = 4;
+    w0 = (2*pi)/N;
+
+    FI = zeros(N, m*2+1);
+    FI(:,1) = 1;
+    for j=1:N
+        for k=1:m
+            FI(j,2*k) = cos(k*w0*(j-1));
+            FI(j,2*k+1) = sin(k*w0*(j-1));
+        endfor
+    endfor
+
+    D = diag(diag(FI' * FI));
+    b = FI' * g;
+    fprintf("b(1) = %.3f \n",b(1));
+    fprintf("b(6) = %.3f \n",b(6));
+    fprintf("b(7) = %.3f \n",b(7));
+
+    A = G_tdf(3)
+
 
 endfunction
 
